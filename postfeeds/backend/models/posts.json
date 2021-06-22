@@ -1,0 +1,88 @@
+[
+    {
+        "id":"101",
+        "title":"Angular",
+        "content":"Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.",
+        "author":"User",
+        "createdDate":"01/01/2021",
+        "comments":
+        [{
+            "commentId":"C1",
+            "authorName":"Harry",
+            "comment":"Hurray!!! Angular does the job for me."
+        },
+        {
+            "commentId":"C2",
+            "authorName":"Erick",
+            "comment":"Angular is an amazing gift from Google"
+        }
+    ]
+    },
+    {
+        "id":"102",
+        "title":"Node JS",
+        "content":"Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser.",
+        "author":"Syam",
+        "createdDate":"06/19/2021",
+        "comments":
+        [{
+            "commentId":"C1",
+            "authorName":"Denson",
+            "comment":"Wow nice, That is a nice feature"
+        },
+        {
+            "commentId":"C2",
+            "authorName":"Alan",
+            "comment":"I don't like Node JS"
+        }
+    ]
+    },
+    {
+        "id":"103",
+        "title":"Flutter",
+        "content":"Flutter is an open-source UI software development kit created by Google. It is used to develop cross platform applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase. The first version of Flutter was known as codename 'Sky' and ran on the Android operating system.",
+        "author":"Joy",
+        "createdDate":"06/04/2021",
+        "comments":
+        [{
+            "commentId":"C1",
+            "authorName":"Roy",
+            "comment":"Wow nice, That is a nice feature"
+        },
+        {
+            "commentId":"C2",
+            "authorName":"Fred",
+            "comment":"I am in love with Flutter"
+        }
+    ]
+    },
+    {
+        "id":"104",
+        "title":"React",
+        "content":"React is an open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications.",
+        "author":"Henry",
+        "createdDate":"06/04/2021",
+        "comments":
+        [{
+            "commentId":"C1",
+            "authorName":"Roy",
+            "comment":"Wow nice, That is a nice feature"
+        },
+        {
+            "commentId":"C2",
+            "authorName":"Fred",
+            "comment":"I am in love with Flutter"
+        },
+        {
+            "commentId":"C1",
+            "authorName":"Megha",
+            "comment":"Wow nice :-) "
+        },
+        {
+            "commentId":"C2",
+            "authorName":"Helen",
+            "comment":"I am in love with Flutter"
+        }
+    ]
+    }
+]
