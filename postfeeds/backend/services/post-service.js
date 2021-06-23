@@ -60,7 +60,6 @@ class PostService {
         return new Promise((resolve, reject) => {
            this.getPostById(id).then((post)=>{
             let comments = post.comments;
-            console.log("Comments:-",post);
             resolve(comments);
            }).catch((err)=>{
                reject(err);
