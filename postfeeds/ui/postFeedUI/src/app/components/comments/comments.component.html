@@ -1,0 +1,15 @@
+<!-- <div class="card text-white bg-success mb-3" style="max-width: 58rem;">
+    <div class="row" *ngFor="let comment of comments">
+        <div class="card-body">
+            <h6 class="card-title">{{comment.authorName}}</h6>
+            <textarea readonly style="width: 55rem;">{{comment.comment}}</textarea>
+            
+        </div>
+    </div>
+</div> -->
+<div *ngFor="let comment of comments">
+<div class="post-comment">
+    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="" class="profile-photo-sm">
+    <p><a class="profile-link link_cursor">{{comment.authorName}} </a><i class="em em-laughing"></i> {{comment.comment}} </p>
+  </div>
+</div>

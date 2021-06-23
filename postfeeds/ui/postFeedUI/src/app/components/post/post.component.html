@@ -1,0 +1,35 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="post-content">
+        <div class="post-container">
+          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="user" class="profile-photo-md pull-left">
+          <div class="post-detail">
+            <div class="user-info">
+              <h5><a class="profile-link link_cursor">{{postDetails.author}}</a> <span
+                  class="following">following</span></h5>
+              <p class="text-muted">{{postDetails.createdDate}}</p>
+            </div>
+            <div class="reaction">
+              <a class="btn text-green" href="#">Back</a>
+              <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 13</a>
+              <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
+            </div>
+            <div class="line-divider"></div>
+            <div class="post-text">
+              <h3>
+                <p>{{postDetails.title}}</p>
+              </h3>
+              <p>{{postDetails.content}} <i class="em em-anguished"></i> <i class="em em-anguished"></i> <i
+                  class="em em-anguished"></i></p>
+            </div>
+            <div class="line-divider"></div>
+            <p> <a class="link_cursor" (click)="loadComments()">Comments</a></p>
+            <app-comments [postId]='postId' *ngIf="commentsFlag"></app-comments>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
