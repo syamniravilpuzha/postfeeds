@@ -4,7 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
-var postsRouter = require('./routes/posts');
+const postsRouter = require('./routes/posts');
+const authRouter = require('./routes/auth')
+// const bodyParser = require('body-parser');
 
 var app = express();
 
@@ -15,9 +17,11 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.json());
 // eslint-disable-next-line no-undef
 //app.use(express.static(path.join(__dirname, 'public')));
-app.use('/posts', postsRouter)
+app.use('/posts', postsRouter);
+app.use('/api/auth', authRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

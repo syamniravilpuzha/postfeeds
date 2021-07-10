@@ -56,17 +56,17 @@ class PostService {
      * @param {*} id 
      * @returns {Promise}
      */
-    getCommentsByPostId(id){
+    getCommentsByPostId(id) {
         return new Promise((resolve, reject) => {
-           this.getPostById(id).then((post)=>{
-            let comments = post.comments;
-            resolve(comments);
-           }).catch((err)=>{
-               reject(err);
-           })
+            this.getPostById(id).then((post) => {
+                let comments = post.comments;
+                resolve(comments);
+            }).catch((err) => {
+                reject(err);
+            })
         });
     }
-    
+
     /**
      * Read file
      * @param {*} postConfigPath 

@@ -13,7 +13,6 @@ class PostController {
             let data = {
                 "response": await this.postService.getAllPosts()
             };
-            console.log("RESULT")
             res.send(data);
         }
         catch (e) {

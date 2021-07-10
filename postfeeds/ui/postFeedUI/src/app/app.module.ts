@@ -10,6 +10,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { DaysCheckPipe } from './pipes/days-check.pipe';
 import { ContactusComponent } from './components/contactus/contactus.component';
 import appRoutes from './router-config';
+import { JwtModule } from '@auth0/angular-jwt';
+import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
+import { FormsModule } from '@angular/forms';
+// ...
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 
 @NgModule({
   declarations: [
@@ -19,14 +28,26 @@ import appRoutes from './router-config';
     CommentsComponent,
     NavbarComponent,
     DaysCheckPipe,
-    ContactusComponent
+    ContactusComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ['localhost:3000'],
+        disallowedRoutes: ['localhost:3000/api/auth']
+      }
+    })
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AuthGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
