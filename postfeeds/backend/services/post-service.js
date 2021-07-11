@@ -43,7 +43,12 @@ class PostService {
                 let post = jsonData.filter((p) => {
                     return p.id == id
                 });
-                resolve(...post);
+                if(post.length>0){
+                    resolve(...post);
+                }
+                else{
+                    reject('No post found!');
+                }
             }).catch((err) => {
                 console.error("File Read Error:", err);
                 reject(err);

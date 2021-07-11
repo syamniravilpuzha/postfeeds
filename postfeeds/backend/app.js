@@ -5,10 +5,31 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const cors = require('cors');
 const postsRouter = require('./routes/posts');
-const authRouter = require('./routes/auth')
-// const bodyParser = require('body-parser');
+const authRouter = require('./routes/auth');
+const swaggerUi = require('swagger-ui-express'),
+swaggerJsdoc = require("swagger-jsdoc");
+const swaggerOptions = {
+  definition: {
+    openapi:"3.0.0",
+    info: {
+      title:"PostFeeds API",
+      version:"1.0.0",
+      description:"A simple express posts API"
+    },
+    servers:[
+      {
+      url:"http://localhost:3000"
+    }
+  ]
+  },
+  apis:["./routes/*.js"]
+};
+const specs = swaggerJsdoc(swaggerOptions)
 
 var app = express();
+
+//swagger UI implementation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,8 +39,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.json());
-// eslint-disable-next-line no-undef
-//app.use(express.static(path.join(__dirname, 'public')));
 app.use('/posts', postsRouter);
 app.use('/api/auth', authRouter);
 
@@ -27,7 +46,6 @@ app.use('/api/auth', authRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
